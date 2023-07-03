@@ -107,6 +107,6 @@ runs:
 
     - name: Build and Publish
       run: |
-        poetry config repositories.publish ${{ inputs.PUBLISH_REGISTRY }}    
-        poetry publish -p ${{ inputs.PUBLISH_REGISTRY_PASSWORD }} -u ${{ inputs.PUBLISH_REGISTRY_USERNAME }} -r publish --build
+        poetry config repositories.pypi ${{ inputs.PUBLISH_REGISTRY }}    
+        poetry publish --build -p '${{ inputs.PUBLISH_REGISTRY_PASSWORD }}' -u '${{ inputs.PUBLISH_REGISTRY_USERNAME }}' -r pypi
       shell: bash
